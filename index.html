@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG Data Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tagify -->
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <!-- Landing Section -->
+    <section id="landing">
+        <div class="landing-content">
+            <div id="globe-partial-container">
+                <div id="globe-partial"></div>
+            </div>
+            <div class="intro-text">
+                <h1>ESG Regulatory Data at Your Fingertips</h1>
+                <p>Identify applicable ESG regulations and reporting requirements in two easy steps.</p>
+                <a href="#main-content" class="scroll-down">Explore Data ↓</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section id="main-content">
+        <h2>Explore Global ESG Regulations</h2>
+        <p class="subtitle">Enter your company profile below OR select a country on the interactive globe.</p>
+        <div class="content-container">
+            <div id="globe-full"></div>
+
+            <!-- Data Panel Container: Shows Wizard OR Country Data -->
+            <div id="country-data-container" class="view-wizard"> <!-- Start in wizard view -->
+
+                 <!-- A. Wizard View -->
+                 <div id="wizard-view">
+                     <h4>Which Reporting Requirements Might Apply?</h4>
+                     <p class="wizard-subtitle">Enter your company profile for a preliminary indication.</p>
+                     <form id="wizard-form">
+                         <div class="wizard-question-inline">
+                             <label for="wizard-employees">Employees (Approx.):</label>
+                             <input type="number" id="wizard-employees" name="employees" placeholder="e.g., 500" min="0">
+                         </div>
+                         <div class="wizard-question-inline">
+                             <label for="wizard-sector">Primary GICS Sector:</label>
+                             <select id="wizard-sector" name="sector">
+                                 <option value="">-- Select Sector --</option>
+                                 <!-- GICS Sectors populated by JS -->
+                             </select>
+                         </div>
+                          <div class="wizard-question-inline">
+                             <label for="wizard-hq-country">
+                                 HQ Country:
+                                 <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Select the main headquarters location.</span></span>
+                            </label>
+                             <select id="wizard-hq-country" name="hq-country" required> <!-- Added required -->
+                                  <option value="">-- Select HQ Country --</option>
+                                  <!-- Countries populated by JS -->
+                             </select>
+                         </div>
+                         <div class="wizard-question-inline">
+                            <label for="wizard-operating-countries">
+                                Other Operating Countries:
+                                <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Add countries with significant operations or subsidiaries (besides HQ).</span></span>
+                            </label>
+                            <!-- Input for Tagify -->
+                            <input id="wizard-operating-countries" name="operating-countries" placeholder="Type to add countries...">
+                        </div>
+                         <button type="submit" class="wizard-submit">Check Applicability & View Regulations</button>
+                     </form>
+                     <div id="wizard-results" class="hidden">
+                         <h5>Potential Regulations:</h5>
+                         <ul id="wizard-results-list"></ul>
+                         <p class="wizard-disclaimer">Preliminary indication only. Consult official guidelines.</p>
+                         <!-- Button to trigger showing country details after results -->
+                         <div class="wizard-results-buttons">
+                            <button id="back-to-form-btn" class="subtle-button hidden">⬅️ Back</button>
+                            <button id="view-country-details-btn" class="wizard-submit hidden">View Country Details</button>
+                         </div>
+                     </div>
+                     <!-- Loading Indicator -->
+                    <div id="loading-indicator" class="hidden">
+                        <div class="spinner"></div>
+                        <p>Loading Country Data...</p>
+                    </div>
+                 </div> <!-- End #wizard-view -->
+
+
+                 <!-- B. Country Data View -->
+                 <div id="country-data-content">
+                     <!-- Carousel Controls (Only shown when cycling through wizard countries) -->
+                     <div id="carousel-controls" class="hidden">
+                        <button id="carousel-prev" class="arrow-button" disabled title="Previous Country">⬅️</button>
+                        <span id="carousel-info">Country X of Y</span>
+                        <button id="carousel-next" class="arrow-button" title="Next Country">➡️</button>
+                    </div>
+
+                     <!-- Existing Country Data Elements -->
+                     <h3 id="country-name-display">Country Name ESG Profile</h3>
+                     <p class="data-subtitle">Environmental, Social, and Governance Insights</p>
+                     <button id="live-data-btn" title="Get Live Data (Future Feature)">Live Data</button>
+
+                     <h4>ESG Performance Scores</h4>
+                     <div class="overall-score">
+                         <span class="score-value" id="overall-score-value">--</span>/100
+                         <span class="score-label">Overall ESG</span>
+                     </div>
+                     <div class="score-bars">
+                          <div class="score-item">
+                             <div class="score-category"><span>Environmental</span><span class="score-number" id="env-score-number">--/100</span></div>
+                             <div class="progress-bar-container"><div class="progress-bar" id="env-progress-bar" style="width: 0%;"></div></div>
+                         </div>
+                          <div class="score-item">
+                              <div class="score-category"><span>Social</span><span class="score-number" id="soc-score-number">--/100</span></div>
+                             <div class="progress-bar-container"><div class="progress-bar" id="soc-progress-bar" style="width: 0%;"></div></div>
+                         </div>
+                          <div class="score-item">
+                              <div class="score-category"><span>Governance</span><span class="score-number" id="gov-score-number">--/100</span></div>
+                             <div class="progress-bar-container"><div class="progress-bar" id="gov-progress-bar" style="width: 0%;"></div></div>
+                         </div>
+                     </div>
+
+                     <h4>Key ESG Regulations <span class="details-link" title="Regulation Details (Future Feature)">ⓘ Details</span></h4>
+                     <div class="regulations-list" id="regulations-list-dynamic">
+                         <!-- Regulations populated here -->
+                     </div>
+
+                     <h4 id="metrics-title" class="hidden">Example Key Reporting Metrics</h4>
+                     <ul class="initiatives-list hidden" id="key-metrics-list">
+                         <!-- Metrics populated here -->
+                     </ul>
+
+                     <!-- Button to switch back to wizard view -->
+                     <button id="back-to-wizard-btn" class="subtle-button">Check Different Company Profile</button>
+                 </div> <!-- End #country-data-content -->
+
+            </div> <!-- End #country-data-container -->
+        </div>
+    </section>
+
+    <!-- amCharts Libraries -->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <!-- Your Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

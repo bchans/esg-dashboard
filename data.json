@@ -1,0 +1,275 @@
+{
+  "DE": {
+    "countryName": "Germany",
+    "overallESGScore": 78,
+    "environmentalScore": 83,
+    "socialScore": 75,
+    "governanceScore": 76,
+    "regulations": [
+      {
+        "name": "Verordnung (EU) 2020/852 (EU Taxonomy Regulation)",
+        "year": 2020,
+        "description": "Sets binding definition of environmentally sustainable economic activities",
+        "status": "success"
+      },
+      {
+        "name": "Verordnung (EU) 2019/2088 (Sustainable Finance Disclosure Regulation)",
+        "year": 2019,
+        "description": "Disclosure of sustainability risks and impacts by financial market participants",
+        "status": "success"
+      },
+      {
+        "name": "Lieferkettensorgfaltspflichtengesetz (Supply Chain Due Diligence Act)",
+        "year": 2021,
+        "description": "Mandatory human rights and environmental due diligence in supply chains",
+        "status": "success"
+      },
+      {
+        "name": "Klimaschutzgesetz (Climate Protection Act)",
+        "year": 2019,
+        "description": "Legally binding greenhouse gas reduction targets and climate neutrality goal",
+        "status": "success"
+      },
+      {
+        "name": "Richtlinie (EU) 2022/2464 (Corporate Sustainability Reporting Directive)",
+        "year": 2022,
+        "description": "Expanded sustainability reporting requirements for large companies",
+        "status": "success"
+      },
+      {
+        "name": "Richtlinie (EU) 2024/XXXX (Corporate Sustainability Due Diligence Directive)",
+        "year": 2024,
+        "description": "Due diligence obligations for human rights and environmental impacts",
+        "status": "pending"
+      }
+    ]
+  },
+
+  "FR": {
+    "countryName": "France",
+    "overallESGScore": 77,
+    "environmentalScore": 83,
+    "socialScore": 77,
+    "governanceScore": 69,
+    "regulations": [
+      {
+        "name": "Loi n°2020-105 relative à la lutte contre le gaspillage et à l'économie circulaire (Anti-Waste Law)",
+        "year": 2020,
+        "description": "Promoting circular economy and reducing waste",
+        "status": "success"
+      },
+      {
+        "name": "Loi n°2021-1104 Climat et Résilience (Climate and Resilience Law)",
+        "year": 2021,
+        "description": "Combating greenwashing and strengthening climate action",
+        "status": "success"
+      },
+      {
+        "name": "Verordnung (EU) 2020/852 (EU Taxonomy Regulation)",
+        "year": 2020,
+        "description": "Definition of environmentally sustainable economic activities",
+        "status": "success"
+      },
+      {
+        "name": "Verordnung (EU) 2019/2088 (Sustainable Finance Disclosure Regulation)",
+        "year": 2019,
+        "description": "Disclosure of sustainability risks and impacts by financial institutions",
+        "status": "success"
+      },
+      {
+        "name": "Richtlinie (EU) 2022/2464 (Corporate Sustainability Reporting Directive)",
+        "year": 2022,
+        "description": "Expanded corporate sustainability disclosure requirements",
+        "status": "success"
+      },
+      {
+        "name": "Loi n°2017-399 relative au devoir de vigilance (Duty of Vigilance Law)",
+        "year": 2017,
+        "description": "Obligation for large companies to monitor and mitigate human rights and environmental risks",
+        "status": "success"
+      },
+      {
+        "name": "Richtlinie (EU) 2024/XXXX (Corporate Sustainability Due Diligence Directive)",
+        "year": 2024,
+        "description": "Due diligence obligations for sustainability and human rights",
+        "status": "pending"
+      }
+    ]
+  },
+
+  "CH": {
+    "countryName": "Switzerland",
+    "overallESGScore": 77,
+    "environmentalScore": 77,
+    "socialScore": 66,
+    "governanceScore": 88,
+    "regulations": [
+      {
+        "name": "Klimaschutz- und Innovationsgesetz (Climate and Innovation Act)",
+        "year": 2023,
+        "description": "Legally binding goal for net-zero emissions by 2050",
+        "status": "success"
+      },
+      {
+        "name": "CO2-Gesetz (Revised CO2 Act)",
+        "year": 2025,
+        "description": "Reducing CO2 emissions by half by 2030",
+        "status": "success"
+      },
+      {
+        "name": "Anti-Greenwashing Vorschriften (Anti-Greenwashing Provision)",
+        "year": 2025,
+        "description": "Substantiation of environmental and climate claims in advertising",
+        "status": "pending"
+      },
+      {
+        "name": "Verordnung über Sorgfaltspflichten und Transparenz im Bereich Mineralien und Kinderarbeit (Due Diligence for Conflict Minerals and Child Labor)",
+        "year": 2022,
+        "description": "Due diligence for conflict minerals and child labor risks",
+        "status": "success"
+      }
+    ]
+  },
+
+  "GB": {
+    "countryName": "GB",
+    "overallESGScore": 62,
+    "environmentalScore": 30,
+    "socialScore": 55,
+    "governanceScore": 100,
+    "regulations": [
+      {
+        "name": "Climate Change Act",
+        "year": 2008,
+        "description": "Net Zero by 2050 target",
+        "status": "success"
+      },
+      {
+        "name": "Modern Slavery Act",
+        "year": 2015,
+        "description": "Preventing modern slavery in operations and supply chains",
+        "status": "success"
+      },
+      {
+        "name": "Companies (Strategic Report) (Climate-related Financial Disclosure) Regulations",
+        "year": 2022,
+        "description": "Mandatory climate risk disclosure aligned with TCFD",
+        "status": "success"
+      },
+      {
+        "name": "Environment Act",
+        "year": 2021,
+        "description": "Framework for environmental protection and improvement",
+        "status": "success"
+      }
+    ]
+  },
+
+  "ES": {
+    "countryName": "Spain",
+    "overallESGScore": 64,
+    "environmentalScore": 62,
+    "socialScore": 64,
+    "governanceScore": 66,
+    "regulations": [
+      {
+        "name": "Ley 11/2018 de información no financiera y diversidad (Non-Financial Reporting Law)",
+        "year": 2018,
+        "description": "Non-financial reporting obligations for large companies",
+        "status": "success"
+      },
+      {
+        "name": "Ley 7/2021 de Cambio Climático y Transición Energética (Climate Change Law)",
+        "year": 2021,
+        "description": "Framework for decarbonization and energy transition",
+        "status": "success"
+      },
+      {
+        "name": "Verordnung (EU) 2020/852 (EU Taxonomy Regulation)",
+        "year": 2020,
+        "description": "Definition of environmentally sustainable economic activities",
+        "status": "success"
+      },
+      {
+        "name": "Verordnung (EU) 2019/2088 (Sustainable Finance Disclosure Regulation)",
+        "year": 2019,
+        "description": "Disclosure obligations for financial institutions",
+        "status": "success"
+      },
+      {
+        "name": "Richtlinie (EU) 2022/2464 (Corporate Sustainability Reporting Directive)",
+        "year": 2022,
+        "description": "Expanded sustainability reporting requirements",
+        "status": "pending"
+      }
+    ]
+  },
+
+  "IT": {
+    "countryName": "Italy",
+    "overallESGScore": 72,
+    "environmentalScore": 73,
+    "socialScore": 74,
+    "governanceScore": 70,
+    "regulations": [
+      {
+        "name": "Legge Costituzionale 1/2022 (Constitutional Reform)",
+        "year": 2022,
+        "description": "Constitutional protection for environment and future generations",
+        "status": "success"
+      },
+      {
+        "name": "Piano Nazionale di Ripresa e Resilienza (National Recovery and Resilience Plan)",
+        "year": 2021,
+        "description": "Framework for green and digital transition initiatives",
+        "status": "success"
+      },
+      {
+        "name": "Decreto Legislativo 254/2016 (Non-Financial Reporting Decree)",
+        "year": 2016,
+        "description": "Mandatory non-financial reporting for large companies",
+        "status": "success"
+      },
+      {
+        "name": "Decreto Legislativo 125/2024 (Sustainability Governance Decree)",
+        "year": 2024,
+        "description": "Integration of sustainability into corporate governance",
+        "status": "pending"
+      }
+    ]
+  },
+
+  "PL": {
+    "countryName": "Poland",
+    "overallESGScore": 57,
+    "environmentalScore": 60,
+    "socialScore": 55,
+    "governanceScore": 60,
+    "regulations": [
+      {
+        "name": "Ustawa o zmianie klimatu (Climate Law)",
+        "year": 2021,
+        "description": "National climate neutrality and emissions targets",
+        "status": "success"
+      },
+      {
+        "name": "Verordnung (EU) 2020/852 (EU Taxonomy Regulation)",
+        "year": 2020,
+        "description": "Definition of environmentally sustainable activities",
+        "status": "success"
+      },
+      {
+        "name": "Verordnung (EU) 2019/2088 (Sustainable Finance Disclosure Regulation)",
+        "year": 2019,
+        "description": "Disclosure of sustainability impacts by financial entities",
+        "status": "success"
+      },
+      {
+        "name": "Richtlinie (EU) 2022/2464 (Corporate Sustainability Reporting Directive)",
+        "year": 2022,
+        "description": "Mandatory ESG reporting requirements",
+        "status": "pending"
+      }
+    ]
+  }
+}
