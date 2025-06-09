@@ -7,44 +7,197 @@
     "governanceScore": 76,
     "regulations": [
       {
-        "name": "Verordnung (EU) 2020/852 (EU Taxonomy Regulation)",
+        "name": "EU Taxonomy Regulation",
         "year": 2020,
-        "description": "Sets binding definition of environmentally sustainable economic activities",
-        "status": "success"
+        "description": "EU regulation creating a classification of environmentally sustainable economic activities to guide investment (in force July 2020).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Financials",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "The obligation to report against the EU Taxonomy is directly linked to being in scope of the CSRD.",
+          "rules": [
+            {
+              "ruleName": "Dependency on CSRD",
+              "description": "Applies to any company that is subject to the Corporate Sustainability Reporting Directive (CSRD).",
+              "dependsOn": "Corporate Sustainability Reporting Directive (CSRD)"
+            }
+          ]
+        }
       },
       {
-        "name": "Verordnung (EU) 2019/2088 (Sustainable Finance Disclosure Regulation)",
+        "name": "Sustainable Finance Disclosure Regulation (SFDR)",
         "year": 2019,
-        "description": "Disclosure of sustainability risks and impacts by financial market participants",
-        "status": "success"
+        "description": "EU regulation requiring financial market participants and advisers to disclose how they integrate ESG factors into investment decisions (in force March 2021).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Financials"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applies to financial market participants and financial advisers in the EU.",
+          "rules": [
+            {
+              "ruleName": "Financial Market Participant",
+              "description": "Applies to entities such as investment firms, pension funds, asset managers, insurance companies, and credit institutions offering portfolio management.",
+              "gicsSectors": [
+                "Financials"
+              ]
+            }
+          ]
+        }
       },
       {
-        "name": "Lieferkettensorgfaltspflichtengesetz (Supply Chain Due Diligence Act)",
-        "year": 2021,
-        "description": "Mandatory human rights and environmental due diligence in supply chains",
-        "status": "success"
-      },
-      {
-        "name": "Klimaschutzgesetz (Climate Protection Act)",
-        "year": 2019,
-        "description": "Legally binding greenhouse gas reduction targets and climate neutrality goal",
-        "status": "success"
-      },
-      {
-        "name": "Richtlinie (EU) 2022/2464 (Corporate Sustainability Reporting Directive)",
+        "name": "Corporate Sustainability Reporting Directive (CSRD)",
         "year": 2022,
-        "description": "Expanded sustainability reporting requirements for large companies",
-        "status": "success"
+        "description": "EU directive requiring large companies to publish annual sustainability (ESG) reports according to common standards (replacing the Non-Financial Reporting Directive).",
+        "status": "Adopted (transposition pending)",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSRD applies if a company meets the criteria of ANY of the following rules. Phased application dates depend on the specific rule met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Undertaking or Large EU Group",
+              "description": "Applies to companies exceeding at least two of the following three criteria.",
+              "combinationRule": "2_of_3",
+              "employeeThreshold": 250,
+              "turnoverThresholdEUR": 50000000,
+              "assetsThresholdEUR": 25000000
+            },
+            {
+              "ruleName": "Listed EU SME",
+              "description": "Applies to any company with securities listed on an EU regulated market (excluding micro-undertakings).",
+              "isListedOnEURegulatedMarket": true
+            },
+            {
+              "ruleName": "Non-EU Parent Company",
+              "description": "Applies to the group if the ultimate non-EU parent generates significant turnover within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 150000000
+            }
+          ]
+        }
       },
       {
-        "name": "Richtlinie (EU) 2024/XXXX (Corporate Sustainability Due Diligence Directive)",
+        "name": "Corporate Sustainability Due Diligence Directive (CSDDD)",
         "year": 2024,
-        "description": "Due diligence obligations for human rights and environmental impacts",
-        "status": "pending"
+        "description": "EU directive requiring large companies to identify and mitigate human rights and environmental impacts in their global value chains (adopted May 2024, implementation by 2028).",
+        "status": "Adopted",
+        "category": "Supply Chain Due Diligence",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSDDD has very high thresholds and applies if EITHER of the following rules are met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Company (Tier 1)",
+              "description": "Applies to very large EU companies based on both employee numbers and worldwide turnover.",
+              "combinationRule": "all",
+              "employeeThreshold": 1000,
+              "turnoverThresholdEUR": 450000000
+            },
+            {
+              "ruleName": "Non-EU Company with EU presence (Tier 1)",
+              "description": "Applies to very large non-EU companies based on turnover generated within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 450000000
+            }
+          ]
+        }
+      },
+      {
+        "name": "Act on Corporate Due Diligence in Supply Chains (Lieferkettengesetz)",
+        "year": 2021,
+        "description": "German law requiring large companies to ensure human rights and environmental standards throughout their supply chains (effective January 2023).",
+        "status": "Enacted",
+        "category": "Supply Chain Due Diligence",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "The LkSG applies based on the number of employees within Germany.",
+          "rules": [
+            {
+              "ruleName": "Employee Threshold in Germany",
+              "description": "Applies to companies that have their central administration, principal place of business, or registered seat in Germany and typically employ at least 1,000 employees in Germany.",
+              "employeeThreshold": 1000,
+              "employeeLocationContext": "Germany"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Federal Climate Protection Act (Bundes-Klimaschutzgesetz)",
+        "year": 2024,
+        "description": "German climate law setting binding national emission reduction targets (updated June 2024) to ensure climate neutrality by 2045.",
+        "status": "Enacted",
+        "category": "Climate Law",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "This is a framework law setting national targets. It does not have direct applicability thresholds for individual companies in the same way as reporting directives, but it informs all other climate-related policy and regulation.",
+          "rules": [
+            {
+              "ruleName": "Informational",
+              "description": "Framework law affecting all sectors through national climate policy.",
+              "applicabilityType": "Informational"
+            }
+          ]
+        }
       }
     ]
   },
-
   "FR": {
     "countryName": "France",
     "overallESGScore": 77,
@@ -53,222 +206,846 @@
     "governanceScore": 69,
     "regulations": [
       {
-        "name": "Loi n°2020-105 relative à la lutte contre le gaspillage et à l'économie circulaire (Anti-Waste Law)",
-        "year": 2020,
-        "description": "Promoting circular economy and reducing waste",
-        "status": "success"
-      },
-      {
-        "name": "Loi n°2021-1104 Climat et Résilience (Climate and Resilience Law)",
-        "year": 2021,
-        "description": "Combating greenwashing and strengthening climate action",
-        "status": "success"
-      },
-      {
-        "name": "Verordnung (EU) 2020/852 (EU Taxonomy Regulation)",
-        "year": 2020,
-        "description": "Definition of environmentally sustainable economic activities",
-        "status": "success"
-      },
-      {
-        "name": "Verordnung (EU) 2019/2088 (Sustainable Finance Disclosure Regulation)",
+        "name": "Sustainable Finance Disclosure Regulation (SFDR)",
         "year": 2019,
-        "description": "Disclosure of sustainability risks and impacts by financial institutions",
-        "status": "success"
+        "description": "EU regulation requiring financial market participants and advisers to disclose ESG considerations in investment products (in force March 2021).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Financials"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applies to financial market participants and financial advisers in the EU.",
+          "rules": [
+            {
+              "ruleName": "Financial Market Participant",
+              "description": "Applies to entities such as investment firms, pension funds, asset managers, insurance companies, and credit institutions offering portfolio management.",
+              "gicsSectors": [
+                "Financials"
+              ]
+            }
+          ]
+        }
       },
       {
-        "name": "Richtlinie (EU) 2022/2464 (Corporate Sustainability Reporting Directive)",
+        "name": "Corporate Sustainability Reporting Directive (CSRD)",
         "year": 2022,
-        "description": "Expanded corporate sustainability disclosure requirements",
-        "status": "success"
+        "description": "EU directive requiring large companies to publish standardized sustainability (ESG) reports, replacing the Non-Financial Reporting Directive.",
+        "status": "Adopted (transposition pending)",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSRD applies if a company meets the criteria of ANY of the following rules. Phased application dates depend on the specific rule met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Undertaking or Large EU Group",
+              "description": "Applies to companies exceeding at least two of the following three criteria.",
+              "combinationRule": "2_of_3",
+              "employeeThreshold": 250,
+              "turnoverThresholdEUR": 50000000,
+              "assetsThresholdEUR": 25000000
+            },
+            {
+              "ruleName": "Listed EU SME",
+              "description": "Applies to any company with securities listed on an EU regulated market (excluding micro-undertakings).",
+              "isListedOnEURegulatedMarket": true
+            },
+            {
+              "ruleName": "Non-EU Parent Company",
+              "description": "Applies to the group if the ultimate non-EU parent generates significant turnover within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 150000000
+            }
+          ]
+        }
       },
       {
-        "name": "Loi n°2017-399 relative au devoir de vigilance (Duty of Vigilance Law)",
-        "year": 2017,
-        "description": "Obligation for large companies to monitor and mitigate human rights and environmental risks",
-        "status": "success"
+        "name": "EU Taxonomy Regulation",
+        "year": 2020,
+        "description": "EU regulation establishing a classification of environmentally sustainable economic activities (entered into force July 2020).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Financials",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "The obligation to report against the EU Taxonomy is directly linked to being in scope of the CSRD.",
+          "rules": [
+            {
+              "ruleName": "Dependency on CSRD",
+              "description": "Applies to any company that is subject to the Corporate Sustainability Reporting Directive (CSRD).",
+              "dependsOn": "Corporate Sustainability Reporting Directive (CSRD)"
+            }
+          ]
+        }
       },
       {
-        "name": "Richtlinie (EU) 2024/XXXX (Corporate Sustainability Due Diligence Directive)",
+        "name": "Corporate Sustainability Due Diligence Directive (CSDDD)",
         "year": 2024,
-        "description": "Due diligence obligations for sustainability and human rights",
-        "status": "pending"
+        "description": "EU directive requiring companies to mitigate human rights and environmental impacts in their value chains (adopted May 2024, implementation by 2028).",
+        "status": "Adopted",
+        "category": "Supply Chain Due Diligence",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSDDD has very high thresholds and applies if EITHER of the following rules are met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Company (Tier 1)",
+              "description": "Applies to very large EU companies based on both employee numbers and worldwide turnover.",
+              "combinationRule": "all",
+              "employeeThreshold": 1000,
+              "turnoverThresholdEUR": 450000000
+            },
+            {
+              "ruleName": "Non-EU Company with EU presence (Tier 1)",
+              "description": "Applies to very large non-EU companies based on turnover generated within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 450000000
+            }
+          ]
+        }
+      },
+      {
+        "name": "Energy Transition Law (Article 173-VI)",
+        "year": 2015,
+        "description": "French law requiring institutional investors to disclose how climate-related risks are managed (amending the Monetary and Financial Code).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Financials"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applies specifically to institutional investors.",
+          "rules": [
+            {
+              "ruleName": "Institutional Investor",
+              "description": "Aims at asset owners and asset managers.",
+              "gicsSectors": [
+                "Financials"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Duty of Vigilance Law",
+        "year": 2017,
+        "description": "French law requiring large companies to prevent human rights and environmental violations in their supply chains (due diligence obligations).",
+        "status": "Enacted",
+        "category": "Supply Chain Due Diligence",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "France's pioneering due diligence law, which will co-exist with the EU CSDDD.",
+          "rules": [
+            {
+              "ruleName": "French Employee Threshold",
+              "description": "Applies to companies with their head office in France and employing, with their direct/indirect subsidiaries, over 5,000 employees in France.",
+              "combinationRule": "any",
+              "employeeThreshold": 5000,
+              "employeeLocationContext": "France"
+            },
+            {
+              "ruleName": "Worldwide Employee Threshold",
+              "description": "Applies to companies with their head office in France and employing, with their direct/indirect subsidiaries, over 10,000 employees worldwide.",
+              "employeeThreshold": 10000,
+              "employeeLocationContext": "Worldwide"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Energy and Climate Law (Article 29, 2019)",
+        "year": 2019,
+        "description": "Law requiring financial institutions and large companies to disclose climate and biodiversity-related impacts (mandatory biodiversity reporting from 2022).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Financials"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Strengthens disclosure for financial entities, including biodiversity.",
+          "rules": [
+            {
+              "ruleName": "Financial Institution",
+              "description": "Broadly applies to financial institutions operating in France.",
+              "gicsSectors": [
+                "Financials"
+              ]
+            }
+          ]
+        }
       }
     ]
   },
-
   "CH": {
     "countryName": "Switzerland",
-    "overallESGScore": 77,
-    "environmentalScore": 77,
-    "socialScore": 66,
-    "governanceScore": 88,
+    "overallESGScore": 80,
+    "environmentalScore": 85,
+    "socialScore": 78,
+    "governanceScore": 77,
     "regulations": [
       {
-        "name": "Klimaschutz- und Innovationsgesetz (Climate and Innovation Act)",
-        "year": 2023,
-        "description": "Legally binding goal for net-zero emissions by 2050",
-        "status": "success"
+        "name": "Swiss Code of Obligations Article 964-2 (Non-Financial Reporting)",
+        "year": 2019,
+        "description": "Amendment to Swiss company law requiring large companies to report on ESG (non-financial) matters (effective for 2022 financial year).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applies to Swiss Public Interest Entities (PIEs) meeting specific size thresholds.",
+          "rules": [
+            {
+              "ruleName": "Swiss Large Public Interest Entity",
+              "description": "Must have over 500 employees AND exceed one of two financial thresholds in two consecutive years.",
+              "combinationRule": "all",
+              "employeeThreshold": 500,
+              "financialCombinationRule": {
+                "rule": "1_of_2",
+                "turnoverThresholdEUR": 36000000,
+                "assetsThresholdEUR": 18000000
+              }
+            }
+          ]
+        }
       },
       {
-        "name": "CO2-Gesetz (Revised CO2 Act)",
-        "year": 2025,
-        "description": "Reducing CO2 emissions by half by 2030",
-        "status": "success"
-      },
-      {
-        "name": "Anti-Greenwashing Vorschriften (Anti-Greenwashing Provision)",
-        "year": 2025,
-        "description": "Substantiation of environmental and climate claims in advertising",
-        "status": "pending"
-      },
-      {
-        "name": "Verordnung über Sorgfaltspflichten und Transparenz im Bereich Mineralien und Kinderarbeit (Due Diligence for Conflict Minerals and Child Labor)",
+        "name": "Ordinance on Climate Disclosures (Switzerland)",
         "year": 2022,
-        "description": "Due diligence for conflict minerals and child labor risks",
-        "status": "success"
+        "description": "Swiss ordinance requiring large companies to publish climate-related financial disclosures aligned with TCFD (effective January 2024).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applicability is tied to the same criteria as the Swiss Code of Obligations for non-financial reporting.",
+          "rules": [
+            {
+              "ruleName": "Swiss Large Public Interest Entity",
+              "description": "Must have over 500 employees AND exceed one of two financial thresholds in two consecutive years.",
+              "combinationRule": "all",
+              "employeeThreshold": 500,
+              "financialCombinationRule": {
+                "rule": "1_of_2",
+                "turnoverThresholdEUR": 36000000,
+                "assetsThresholdEUR": 18000000
+              }
+            }
+          ]
+        }
       }
     ]
   },
-
   "GB": {
-    "countryName": "GB",
-    "overallESGScore": 62,
-    "environmentalScore": 30,
-    "socialScore": 55,
-    "governanceScore": 100,
+    "countryName": "United Kingdom",
+    "overallESGScore": 76,
+    "environmentalScore": 79,
+    "socialScore": 74,
+    "governanceScore": 75,
     "regulations": [
       {
-        "name": "Climate Change Act",
-        "year": 2008,
-        "description": "Net Zero by 2050 target",
-        "status": "success"
-      },
-      {
-        "name": "Modern Slavery Act",
-        "year": 2015,
-        "description": "Preventing modern slavery in operations and supply chains",
-        "status": "success"
+        "name": "UK Sustainability Disclosure Requirements (SDR)",
+        "year": 2023,
+        "description": "UK regulation establishing sustainability disclosure requirements for financial institutions (analogous to the EU SFDR), with phased implementation from April 2024.",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Financials"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applies to UK-based financial services firms and asset managers.",
+          "rules": [
+            {
+              "ruleName": "UK Financial Institution / Asset Manager",
+              "description": "Applies to UK-regulated financial institutions, including asset managers, with assets under management exceeding a certain threshold (e.g., £5 billion).",
+              "gicsSectors": [
+                "Financials"
+              ]
+            }
+          ]
+        }
       },
       {
         "name": "Companies (Strategic Report) (Climate-related Financial Disclosure) Regulations",
         "year": 2022,
-        "description": "Mandatory climate risk disclosure aligned with TCFD",
-        "status": "success"
-      },
-      {
-        "name": "Environment Act",
-        "year": 2021,
-        "description": "Framework for environmental protection and improvement",
-        "status": "success"
+        "description": "UK regulation requiring many large companies and financial institutions to report climate-related financial risks in line with TCFD recommendations (effective for 2022/23 reports).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applies to large UK companies and LLPs, whether listed or private.",
+          "rules": [
+            {
+              "ruleName": "Large UK Company",
+              "description": "Applies to UK companies with over 500 employees and a turnover of more than £500 million.",
+              "combinationRule": "all",
+              "employeeThreshold": 500,
+              "turnoverThresholdEUR": 580000000
+            },
+            {
+              "ruleName": "UK Listed Company",
+              "description": "Applies to UK registered companies whose shares are traded on a UK regulated market.",
+              "isListedOnEURegulatedMarket": true
+            }
+          ]
+        }
       }
     ]
   },
-
   "ES": {
     "countryName": "Spain",
-    "overallESGScore": 64,
-    "environmentalScore": 62,
-    "socialScore": 64,
-    "governanceScore": 66,
+    "overallESGScore": 75,
+    "environmentalScore": 80,
+    "socialScore": 72,
+    "governanceScore": 73,
     "regulations": [
       {
-        "name": "Ley 11/2018 de información no financiera y diversidad (Non-Financial Reporting Law)",
-        "year": 2018,
-        "description": "Non-financial reporting obligations for large companies",
-        "status": "success"
-      },
-      {
-        "name": "Ley 7/2021 de Cambio Climático y Transición Energética (Climate Change Law)",
-        "year": 2021,
-        "description": "Framework for decarbonization and energy transition",
-        "status": "success"
-      },
-      {
-        "name": "Verordnung (EU) 2020/852 (EU Taxonomy Regulation)",
-        "year": 2020,
-        "description": "Definition of environmentally sustainable economic activities",
-        "status": "success"
-      },
-      {
-        "name": "Verordnung (EU) 2019/2088 (Sustainable Finance Disclosure Regulation)",
+        "name": "Sustainable Finance Disclosure Regulation (SFDR)",
         "year": 2019,
-        "description": "Disclosure obligations for financial institutions",
-        "status": "success"
+        "description": "EU regulation requiring financial market participants and advisers to disclose sustainability information (in force March 2021).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Financials"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applies to financial market participants and financial advisers in the EU.",
+          "rules": [
+            {
+              "ruleName": "Financial Market Participant",
+              "description": "Applies to entities such as investment firms, pension funds, asset managers, insurance companies, and credit institutions offering portfolio management.",
+              "gicsSectors": [
+                "Financials"
+              ]
+            }
+          ]
+        }
       },
       {
-        "name": "Richtlinie (EU) 2022/2464 (Corporate Sustainability Reporting Directive)",
+        "name": "Corporate Sustainability Reporting Directive (CSRD)",
         "year": 2022,
-        "description": "Expanded sustainability reporting requirements",
-        "status": "pending"
+        "description": "EU directive requiring large companies to produce standardized sustainability (ESG) reports (replacing the Non-Financial Reporting Directive).",
+        "status": "Adopted (transposition pending)",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSRD applies if a company meets the criteria of ANY of the following rules. Phased application dates depend on the specific rule met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Undertaking or Large EU Group",
+              "description": "Applies to companies exceeding at least two of the following three criteria.",
+              "combinationRule": "2_of_3",
+              "employeeThreshold": 250,
+              "turnoverThresholdEUR": 50000000,
+              "assetsThresholdEUR": 25000000
+            },
+            {
+              "ruleName": "Listed EU SME",
+              "description": "Applies to any company with securities listed on an EU regulated market (excluding micro-undertakings).",
+              "isListedOnEURegulatedMarket": true
+            },
+            {
+              "ruleName": "Non-EU Parent Company",
+              "description": "Applies to the group if the ultimate non-EU parent generates significant turnover within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 150000000
+            }
+          ]
+        }
+      },
+      {
+        "name": "EU Taxonomy Regulation",
+        "year": 2020,
+        "description": "EU regulation establishing a classification system for sustainable economic activities (entered into force July 2020).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Financials",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "The obligation to report against the EU Taxonomy is directly linked to being in scope of the CSRD.",
+          "rules": [
+            {
+              "ruleName": "Dependency on CSRD",
+              "description": "Applies to any company that is subject to the Corporate Sustainability Reporting Directive (CSRD).",
+              "dependsOn": "Corporate Sustainability Reporting Directive (CSRD)"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Corporate Sustainability Due Diligence Directive (CSDDD)",
+        "year": 2024,
+        "description": "EU directive requiring companies to address human rights and environmental risks in their value chains (adopted May 2024, implementation by 2028).",
+        "status": "Adopted",
+        "category": "Supply Chain Due Diligence",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSDDD has very high thresholds and applies if EITHER of the following rules are met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Company (Tier 1)",
+              "description": "Applies to very large EU companies based on both employee numbers and worldwide turnover.",
+              "combinationRule": "all",
+              "employeeThreshold": 1000,
+              "turnoverThresholdEUR": 450000000
+            },
+            {
+              "ruleName": "Non-EU Company with EU presence (Tier 1)",
+              "description": "Applies to very large non-EU companies based on turnover generated within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 450000000
+            }
+          ]
+        }
+      },
+      {
+        "name": "Law 7/2021 on Climate Change and Energy Transition",
+        "year": 2021,
+        "description": "Spanish law requiring listed companies, credit and insurance entities, and large corporations to disclose climate-related financial risks and align with Paris Agreement targets.",
+        "status": "Enacted",
+        "category": "Climate Law",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "The definition of 'large corporations' aligns with those covered by EU non-financial reporting rules.",
+          "rules": [
+            {
+              "ruleName": "Dependency on CSRD Scope",
+              "description": "Applies to companies considered large enough to fall under the scope of the CSRD.",
+              "dependsOn": "Corporate Sustainability Reporting Directive (CSRD)"
+            },
+            {
+              "ruleName": "Listed Companies and Financials",
+              "description": "Explicitly applies to all listed companies and credit/insurance entities regardless of size.",
+              "isListedOnEURegulatedMarket": true,
+              "gicsSectors": [
+                "Financials"
+              ]
+            }
+          ]
+        }
       }
     ]
   },
-
   "IT": {
     "countryName": "Italy",
-    "overallESGScore": 72,
-    "environmentalScore": 73,
-    "socialScore": 74,
+    "overallESGScore": 74,
+    "environmentalScore": 78,
+    "socialScore": 73,
     "governanceScore": 70,
     "regulations": [
       {
-        "name": "Legge Costituzionale 1/2022 (Constitutional Reform)",
+        "name": "Sustainable Finance Disclosure Regulation (SFDR)",
+        "year": 2019,
+        "description": "EU regulation requiring financial institutions and advisers to disclose sustainability information in investment products (in force March 2021).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Financials"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applies to financial market participants and financial advisers in the EU.",
+          "rules": [
+            {
+              "ruleName": "Financial Market Participant",
+              "description": "Applies to entities such as investment firms, pension funds, asset managers, insurance companies, and credit institutions offering portfolio management.",
+              "gicsSectors": [
+                "Financials"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Corporate Sustainability Reporting Directive (CSRD)",
         "year": 2022,
-        "description": "Constitutional protection for environment and future generations",
-        "status": "success"
+        "description": "Italian decree (Italian Decree 125/2024) implementing the EU CSRD, requiring large and listed companies to provide standardized ESG disclosures (effective from FY 2024).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSRD applies if a company meets the criteria of ANY of the following rules. Phased application dates depend on the specific rule met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Undertaking or Large EU Group",
+              "description": "Applies to companies exceeding at least two of the following three criteria.",
+              "combinationRule": "2_of_3",
+              "employeeThreshold": 250,
+              "turnoverThresholdEUR": 50000000,
+              "assetsThresholdEUR": 25000000
+            },
+            {
+              "ruleName": "Listed EU SME",
+              "description": "Applies to any company with securities listed on an EU regulated market (excluding micro-undertakings).",
+              "isListedOnEURegulatedMarket": true
+            },
+            {
+              "ruleName": "Non-EU Parent Company",
+              "description": "Applies to the group if the ultimate non-EU parent generates significant turnover within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 150000000
+            }
+          ]
+        }
       },
       {
-        "name": "Piano Nazionale di Ripresa e Resilienza (National Recovery and Resilience Plan)",
-        "year": 2021,
-        "description": "Framework for green and digital transition initiatives",
-        "status": "success"
+        "name": "EU Taxonomy Regulation",
+        "year": 2020,
+        "description": "EU regulation establishing a classification system for sustainable economic activities (in force July 2020).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Financials",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "The obligation to report against the EU Taxonomy is directly linked to being in scope of the CSRD.",
+          "rules": [
+            {
+              "ruleName": "Dependency on CSRD",
+              "description": "Applies to any company that is subject to the Corporate Sustainability Reporting Directive (CSRD).",
+              "dependsOn": "Corporate Sustainability Reporting Directive (CSRD)"
+            }
+          ]
+        }
       },
       {
-        "name": "Decreto Legislativo 254/2016 (Non-Financial Reporting Decree)",
-        "year": 2016,
-        "description": "Mandatory non-financial reporting for large companies",
-        "status": "success"
-      },
-      {
-        "name": "Decreto Legislativo 125/2024 (Sustainability Governance Decree)",
+        "name": "Corporate Sustainability Due Diligence Directive (CSDDD)",
         "year": 2024,
-        "description": "Integration of sustainability into corporate governance",
-        "status": "pending"
+        "description": "EU directive requiring companies to identify and mitigate human rights and environmental impacts in their value chains (approved 2024, to be implemented by 2028).",
+        "status": "Adopted",
+        "category": "Supply Chain Due Diligence",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSDDD has very high thresholds and applies if EITHER of the following rules are met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Company (Tier 1)",
+              "description": "Applies to very large EU companies based on both employee numbers and worldwide turnover.",
+              "combinationRule": "all",
+              "employeeThreshold": 1000,
+              "turnoverThresholdEUR": 450000000
+            },
+            {
+              "ruleName": "Non-EU Company with EU presence (Tier 1)",
+              "description": "Applies to very large non-EU companies based on turnover generated within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 450000000
+            }
+          ]
+        }
+      },
+      {
+        "name": "Legislative Decree 254/2016 (NFRD transposition)",
+        "year": 2016,
+        "description": "Italian decree transposing the EU Non-Financial Reporting Directive, requiring certain large companies to report on environmental and social matters in their management reports.",
+        "status": "Replaced by CSRD",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "This national law has been superseded by the national implementation of CSRD.",
+          "rules": [
+            {
+              "ruleName": "Historical / Superseded",
+              "description": "The criteria for the Non-Financial Reporting Directive (NFRD) are now replaced by the more extensive CSRD criteria.",
+              "applicabilityType": "Historical"
+            }
+          ]
+        }
       }
     ]
   },
-
   "PL": {
     "countryName": "Poland",
-    "overallESGScore": 57,
-    "environmentalScore": 60,
-    "socialScore": 55,
-    "governanceScore": 60,
+    "overallESGScore": 70,
+    "environmentalScore": 74,
+    "socialScore": 68,
+    "governanceScore": 67,
     "regulations": [
       {
-        "name": "Ustawa o zmianie klimatu (Climate Law)",
-        "year": 2021,
-        "description": "National climate neutrality and emissions targets",
-        "status": "success"
-      },
-      {
-        "name": "Verordnung (EU) 2020/852 (EU Taxonomy Regulation)",
-        "year": 2020,
-        "description": "Definition of environmentally sustainable activities",
-        "status": "success"
-      },
-      {
-        "name": "Verordnung (EU) 2019/2088 (Sustainable Finance Disclosure Regulation)",
+        "name": "Sustainable Finance Disclosure Regulation (SFDR)",
         "year": 2019,
-        "description": "Disclosure of sustainability impacts by financial entities",
-        "status": "success"
+        "description": "EU regulation requiring financial market participants and advisers to disclose how they integrate ESG factors (in force March 2021).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Financials"
+        ],
+        "applicabilityCriteria": {
+          "notes": "Applies to financial market participants and financial advisers in the EU.",
+          "rules": [
+            {
+              "ruleName": "Financial Market Participant",
+              "description": "Applies to entities such as investment firms, pension funds, asset managers, insurance companies, and credit institutions offering portfolio management.",
+              "gicsSectors": [
+                "Financials"
+              ]
+            }
+          ]
+        }
       },
       {
-        "name": "Richtlinie (EU) 2022/2464 (Corporate Sustainability Reporting Directive)",
+        "name": "Corporate Sustainability Reporting Directive (CSRD)",
         "year": 2022,
-        "description": "Mandatory ESG reporting requirements",
-        "status": "pending"
+        "description": "EU directive requiring large companies to report sustainability information (phase-in from 2024).",
+        "status": "Adopted (transposition pending)",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSRD applies if a company meets the criteria of ANY of the following rules. Phased application dates depend on the specific rule met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Undertaking or Large EU Group",
+              "description": "Applies to companies exceeding at least two of the following three criteria.",
+              "combinationRule": "2_of_3",
+              "employeeThreshold": 250,
+              "turnoverThresholdEUR": 50000000,
+              "assetsThresholdEUR": 25000000
+            },
+            {
+              "ruleName": "Listed EU SME",
+              "description": "Applies to any company with securities listed on an EU regulated market (excluding micro-undertakings).",
+              "isListedOnEURegulatedMarket": true
+            },
+            {
+              "ruleName": "Non-EU Parent Company",
+              "description": "Applies to the group if the ultimate non-EU parent generates significant turnover within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 150000000
+            }
+          ]
+        }
+      },
+      {
+        "name": "EU Taxonomy Regulation",
+        "year": 2020,
+        "description": "EU regulation establishing a taxonomy of environmentally sustainable economic activities (entered into force July 2020).",
+        "status": "Enacted",
+        "category": "Reporting",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Financials",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "The obligation to report against the EU Taxonomy is directly linked to being in scope of the CSRD.",
+          "rules": [
+            {
+              "ruleName": "Dependency on CSRD",
+              "description": "Applies to any company that is subject to the Corporate Sustainability Reporting Directive (CSRD).",
+              "dependsOn": "Corporate Sustainability Reporting Directive (CSRD)"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Corporate Sustainability Due Diligence Directive (CSDDD)",
+        "year": 2024,
+        "description": "EU directive requiring companies to perform due diligence on human rights and environmental impacts in their supply chains (adopted May 2024, to be implemented by 2028).",
+        "status": "Adopted",
+        "category": "Supply Chain Due Diligence",
+        "gicsSectors": [
+          "Energy",
+          "Materials",
+          "Industrials",
+          "Consumer Discretionary",
+          "Consumer Staples",
+          "Health Care",
+          "Financials",
+          "Information Technology",
+          "Communication Services",
+          "Utilities",
+          "Real Estate"
+        ],
+        "applicabilityCriteria": {
+          "notes": "CSDDD has very high thresholds and applies if EITHER of the following rules are met.",
+          "rules": [
+            {
+              "ruleName": "Large EU Company (Tier 1)",
+              "description": "Applies to very large EU companies based on both employee numbers and worldwide turnover.",
+              "combinationRule": "all",
+              "employeeThreshold": 1000,
+              "turnoverThresholdEUR": 450000000
+            },
+            {
+              "ruleName": "Non-EU Company with EU presence (Tier 1)",
+              "description": "Applies to very large non-EU companies based on turnover generated within the EU.",
+              "isNonEUParent": true,
+              "groupTurnoverInEURExceeds": 450000000
+            }
+          ]
+        }
       }
     ]
   }

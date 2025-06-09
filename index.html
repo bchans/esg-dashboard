@@ -42,50 +42,182 @@
 
                  <!-- A. Wizard View -->
                  <div id="wizard-view">
-                     <h4>Which Reporting Requirements Might Apply?</h4>
-                     <p class="wizard-subtitle">Enter your company profile for a preliminary indication.</p>
+                     <!-- Top Back Button for Wizard Results -->
+                     <button id="wizard-top-back-btn" class="top-back-button hidden" title="Back to main view">⬅️</button>
+                     
+                     <div class="wizard-header">
+                         <h4>Which Reporting Requirements Might Apply?</h4>
+                         <p class="wizard-subtitle">Choose your assessment level and enter your company profile.</p>
+                     </div>
+                     
+                     <!-- Segmented Control for Tab Selection -->
+                     <div class="tab-control">
+                         <button type="button" class="tab-button active" data-tab="quick-scan">Quick Scan</button>
+                         <button type="button" class="tab-button" data-tab="full-assessment">Full Assessment</button>
+                     </div>
+                     
                      <form id="wizard-form">
-                         <div class="wizard-question-inline">
-                             <label for="wizard-employees">Employees (Approx.):</label>
-                             <input type="number" id="wizard-employees" name="employees" placeholder="e.g., 500" min="0">
+                         <!-- Quick Scan Tab Content -->
+                         <div id="quick-scan-content" class="tab-content active">
+                             <div class="wizard-question-inline">
+                                 <label for="wizard-employees">
+                                     Worldwide Employees (Approx.):
+                                     <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Full-time equivalent (FTE) employees worldwide. Part-time employees should be counted proportionally (e.g., 0.5 FTE for half-time).</span></span>
+                                 </label>
+                                 <input type="number" id="wizard-employees" name="employees" placeholder="e.g., 500" min="0" required>
+                             </div>
+                             <div class="wizard-question-inline">
+                                 <label for="wizard-sector">Primary GICS Sector:</label>
+                                 <select id="wizard-sector" name="sector">
+                                     <option value="">-- Select Sector --</option>
+                                     <!-- GICS Sectors populated by JS -->
+                                 </select>
+                             </div>
+                             <div class="wizard-question-inline">
+                                 <label for="wizard-hq-country">
+                                     HQ Country:
+                                     <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Select the main headquarters location.</span></span>
+                                </label>
+                                 <select id="wizard-hq-country" name="hq-country" required>
+                                      <option value="">-- Select HQ Country --</option>
+                                      <!-- Countries populated by JS -->
+                                 </select>
+                             </div>
+                             <div class="wizard-question-inline">
+                                <label for="wizard-operating-countries">
+                                    Other Operating Countries:
+                                    <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Add countries with significant operations or subsidiaries (besides HQ).</span></span>
+                                </label>
+                                <!-- Input for Tagify -->
+                                <input id="wizard-operating-countries" name="operating-countries" placeholder="Type to add countries...">
+                            </div>
                          </div>
-                         <div class="wizard-question-inline">
-                             <label for="wizard-sector">Primary GICS Sector:</label>
-                             <select id="wizard-sector" name="sector">
-                                 <option value="">-- Select Sector --</option>
-                                 <!-- GICS Sectors populated by JS -->
-                             </select>
+                         
+                         <!-- Full Assessment Tab Content -->
+                         <div id="full-assessment-content" class="tab-content">
+                             <!-- Company Profile Group -->
+                             <div class="form-group">
+                                 <h5 class="group-title">Company Profile</h5>
+                                 <div class="wizard-question-inline">
+                                     <label for="wizard-employees-fte">
+                                         Worldwide Employees (FTE):
+                                         <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Provide the average number of full-time equivalent employees for the last fiscal year. This is a primary trigger for CSRD and CSDDD.</span></span>
+                                     </label>
+                                     <input type="number" id="wizard-employees-fte" name="employees-fte" placeholder="e.g., 650" min="0" required>
+                                 </div>
+                                 <div class="wizard-question-inline">
+                                     <label for="wizard-sector-full">Primary GICS Sector:</label>
+                                     <select id="wizard-sector-full" name="sector-full" required>
+                                         <option value="">-- Select Sector --</option>
+                                         <!-- GICS Sectors populated by JS -->
+                                     </select>
+                                 </div>
+                                 <div class="wizard-question-inline">
+                                     <label for="wizard-hq-country-full">
+                                         HQ Country:
+                                         <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Select the main headquarters location.</span></span>
+                                    </label>
+                                     <select id="wizard-hq-country-full" name="hq-country-full">
+                                          <option value="">-- Select HQ Country --</option>
+                                          <!-- Countries populated by JS -->
+                                     </select>
+                                 </div>
+                             </div>
+                             
+                             <!-- Financials Group -->
+                             <div class="form-group">
+                                 <h5 class="group-title">Financials (Most Recent Fiscal Year)</h5>
+                                 <div class="wizard-question-inline">
+                                     <label for="wizard-turnover">
+                                         Annual Net Turnover in € (Worldwide):
+                                         <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Enter the company's total worldwide revenue in EUR from your last income statement. This is a critical threshold for both CSRD and CSDDD.</span></span>
+                                     </label>
+                                     <input type="number" id="wizard-turnover" name="turnover" placeholder="e.g., 85000000" min="0" required>
+                                 </div>
+                                 <div class="wizard-question-inline">
+                                     <label for="wizard-assets">
+                                         Total Assets in € (Balance Sheet Total):
+                                         <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Enter the total assets in EUR from your company's last balance sheet. This is one of the three main criteria for CSRD applicability.</span></span>
+                                     </label>
+                                     <input type="number" id="wizard-assets" name="assets" placeholder="e.g., 45000000" min="0" required>
+                                 </div>
+                             </div>
+                             
+                             <!-- Corporate Structure Group -->
+                             <div class="form-group">
+                                 <h5 class="group-title">Corporate Structure & Listing</h5>
+                                 <div class="wizard-question-inline">
+                                     <label for="wizard-listing">
+                                         Listing Status:
+                                         <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Publicly listed companies, especially those on EU markets, are often subject to stricter reporting rules, such as CSRD, even if they are smaller.</span></span>
+                                     </label>
+                                     <select id="wizard-listing" name="listing" required>
+                                         <option value="">-- Select Listing Status --</option>
+                                         <option value="not-listed">Not Listed</option>
+                                         <option value="eu-listed">Listed on an EU Regulated Market</option>
+                                         <option value="non-eu-listed">Listed on a non-EU Market</option>
+                                     </select>
+                                 </div>
+                                 <div class="wizard-question-inline">
+                                     <label for="wizard-corporate-role">
+                                         Company's Role in Group:
+                                         <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Regulations can apply at the consolidated (parent) level. This determines if you must report for a group or might be covered by a parent's report.</span></span>
+                                     </label>
+                                     <select id="wizard-corporate-role" name="corporate-role" required>
+                                         <option value="">-- Select Role --</option>
+                                         <option value="standalone">Standalone Company</option>
+                                         <option value="parent">Parent Company of a Group</option>
+                                         <option value="subsidiary">Subsidiary within a Group</option>
+                                     </select>
+                                 </div>
+                                 <div class="wizard-question-inline conditional-field" id="non-eu-turnover-field">
+                                     <label for="wizard-non-eu-turnover">
+                                         Group's Annual Net Turnover in € Generated in the EU:
+                                         <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">If a non-EU parent company's group generates over €150M in the EU, it may fall under CSRD. If it generates over €450M in the EU, it may fall under CSDDD.</span></span>
+                                     </label>
+                                     <input type="number" id="wizard-non-eu-turnover" name="non-eu-turnover" placeholder="e.g., 160000000" min="0">
+                                 </div>
+                                 <div class="wizard-question-inline">
+                                    <label for="wizard-operating-countries-full">
+                                        Other Operating Countries:
+                                        <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Add countries with significant operations or subsidiaries (besides HQ).</span></span>
+                                    </label>
+                                    <!-- Input for Tagify -->
+                                    <input id="wizard-operating-countries-full" name="operating-countries-full" placeholder="Type to add countries...">
+                                </div>
+                             </div>
                          </div>
-                          <div class="wizard-question-inline">
-                             <label for="wizard-hq-country">
-                                 HQ Country:
-                                 <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Select the main headquarters location.</span></span>
-                            </label>
-                             <select id="wizard-hq-country" name="hq-country" required> <!-- Added required -->
-                                  <option value="">-- Select HQ Country --</option>
-                                  <!-- Countries populated by JS -->
-                             </select>
-                         </div>
-                         <div class="wizard-question-inline">
-                            <label for="wizard-operating-countries">
-                                Other Operating Countries:
-                                <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Add countries with significant operations or subsidiaries (besides HQ).</span></span>
-                            </label>
-                            <!-- Input for Tagify -->
-                            <input id="wizard-operating-countries" name="operating-countries" placeholder="Type to add countries...">
-                        </div>
+                         
                          <button type="submit" class="wizard-submit">Check Applicability & View Regulations</button>
                      </form>
+                     
+                     <!-- Top row container for mini-globe and categories -->
+                     <div class="top-row hidden" id="top-row">
+                         <!-- Mini Globe Container -->
+                         <div id="mini-globe-container" class="mini-globe-container">
+                             <div id="mini-globe"></div>
+                             <p class="mini-globe-caption">Your company's regulatory scope</p>
+                         </div>
+
+                         <!-- Regulation Categories Summary -->
+                         <div id="regulation-categories" class="regulation-categories">
+                             <h5>Regulation Overview</h5>
+                             <div id="categories-list" class="categories-list"></div>
+                         </div>
+                     </div>
+
+                     <!-- Detailed regulations - now comes last -->
                      <div id="wizard-results" class="hidden">
-                         <h5>Potential Regulations:</h5>
-                         <ul id="wizard-results-list"></ul>
-                         <p class="wizard-disclaimer">Preliminary indication only. Consult official guidelines.</p>
+                         <h5 id="results-title">Applicable ESG Regulations:</h5>
+                         <div class="regulations-list" id="wizard-results-list"></div>
+                         <p class="wizard-disclaimer">Preliminary indication only. For a more detailed assessment, use the Full Assessment mode or consult official guidelines and legal professionals.</p>
                          <!-- Button to trigger showing country details after results -->
                          <div class="wizard-results-buttons">
                             <button id="back-to-form-btn" class="subtle-button hidden">⬅️ Back</button>
                             <button id="view-country-details-btn" class="wizard-submit hidden">View Country Details</button>
                          </div>
                      </div>
+
                      <!-- Loading Indicator -->
                     <div id="loading-indicator" class="hidden">
                         <div class="spinner"></div>
@@ -96,6 +228,9 @@
 
                  <!-- B. Country Data View -->
                  <div id="country-data-content">
+                     <!-- Top Back Button -->
+                     <button id="top-back-btn" class="top-back-button hidden" title="Back to wizard">⬅️</button>
+                     
                      <!-- Carousel Controls (Only shown when cycling through wizard countries) -->
                      <div id="carousel-controls" class="hidden">
                         <button id="carousel-prev" class="arrow-button" disabled title="Previous Country">⬅️</button>
@@ -139,7 +274,7 @@
                      </ul>
 
                      <!-- Button to switch back to wizard view -->
-                     <button id="back-to-wizard-btn" class="subtle-button">Check Different Company Profile</button>
+                     <button id="back-to-wizard-btn" class="back-button">⬅️ Back to worldview</button>
                  </div> <!-- End #country-data-content -->
 
             </div> <!-- End #country-data-container -->
